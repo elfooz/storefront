@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const state= useSelector((state)=> state.handleCart)
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-light py-3">
         <div className="container-fluid">
-          <Link className="navbar-brand fw-blod fs-4" to="#">
+          <Link className="navbar-brand fw-blod fs-4" to="/">
             Anas Store
           </Link>
           <button
@@ -43,17 +45,17 @@ const Navbar = () => {
                 </Link>
               </li>
             </ul>
-            <button className="buttons">
-              <Link to="/login" className="btn btn-outline-dark">
+            {/* <button className="buttons"> */}
+              {/* <Link to="/login" className="btn btn-outline-dark">
                 <i className="fa fa-sign-in me-1"></i> Login
               </Link>
               <Link to="/register" className="btn btn-outline-dark ms-2">
                 <i className="fa fa-user-plus me-1"></i> Register
-              </Link>
+              </Link> */}
               <Link to="/cart" className="btn btn-outline-dark ms-2">
-                <i className="fa fa-shopping-cart me-1"></i> Cart (0)
+                <i className="fa fa-shopping-cart me-1"></i> Cart ({state.length})
               </Link>
-            </button>
+            {/* </button> */}
           </div>
         </div>
       </nav>
