@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 import { Link } from "react-router-dom";
 
-
 function Products() {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
@@ -25,35 +24,61 @@ function Products() {
     getProducts();
   }, []);
   const Loading = () => {
-    return( <>
-    <div className="col-md-3">
-        <Skeleton height={350}/>
-    </div>
-    <div className="col-md-3">
-        <Skeleton height={350}/>
-    </div> <div className="col-md-3">
-        <Skeleton height={350}/>
-    </div> <div className="col-md-3">
-        <Skeleton height={350}/>
-    </div>
-    </>
+    return (
+      <>
+        <div className="col-md-3">
+          <Skeleton height={350} />
+        </div>
+        <div className="col-md-3">
+          <Skeleton height={350} />
+        </div>{" "}
+        <div className="col-md-3">
+          <Skeleton height={350} />
+        </div>{" "}
+        <div className="col-md-3">
+          <Skeleton height={350} />
+        </div>
+      </>
     );
   };
-  const filterProduct=(cat)=>{
-const updatedList = data.filter((x)=>x.category === cat);
-setFilter(updatedList);
-  }
+  const filterProduct = (cat) => {
+    const updatedList = data.filter((x) => x.category === cat);
+    setFilter(updatedList);
+  };
   const ShowProducts = () => {
     return (
       <>
         <div className="buttons d-flex justify-content-center mb-5 pb-5">
-          <button className="btn btn-outline-dark me-2" onClick={()=>setFilter(data)}>All</button>
-          <button className="btn btn-outline-dark me-2"  onClick={()=>filterProduct("men's clothing")}>Men's Clothing</button>
-          <button className="btn btn-outline-dark me-2"onClick={()=>filterProduct("women's clothing")}>
+          <button
+            className="btn btn-outline-dark me-2"
+            onClick={() => setFilter(data)}
+          >
+            All
+          </button>
+          <button
+            className="btn btn-outline-dark me-2"
+            onClick={() => filterProduct("men's clothing")}
+          >
+            Men's Clothing
+          </button>
+          <button
+            className="btn btn-outline-dark me-2"
+            onClick={() => filterProduct("women's clothing")}
+          >
             Women's Clothing
           </button>
-          <button className="btn btn-outline-dark me-2"onClick={()=>filterProduct("jewelery")}>Jewelery</button>
-          <button className="btn btn-outline-dark me-2"onClick={()=>filterProduct("electronics")}>Eleactronic</button>
+          <button
+            className="btn btn-outline-dark me-2"
+            onClick={() => filterProduct("jewelery")}
+          >
+            Jewelery
+          </button>
+          <button
+            className="btn btn-outline-dark me-2"
+            onClick={() => filterProduct("electronics")}
+          >
+            Eleactronic
+          </button>
         </div>
         {filter.map((product) => {
           return (
@@ -64,15 +89,18 @@ setFilter(updatedList);
                     src={product.image}
                     className="card-img-top"
                     alt={product.title}
-                    height='250px'
+                    height="250px"
                   />
                   <div className="card-body">
                     <h5 className="card-title mb-0">
                       {product.title.substring(0, 12)}....
                     </h5>
                     <p className="card-text lead fw-bold">${product.price}</p>
-                    <Link to={`/products/${product.id}`} className="btn btn-outline-dark">
-                     Buy Now
+                    <Link
+                      to={`/products/${product.id}`}
+                      className="btn btn-outline-dark"
+                    >
+                      View Details
                     </Link>
                   </div>
                 </div>
