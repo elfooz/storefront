@@ -1,17 +1,18 @@
 import './App.css';
 import Home from './component/Home';
-import Navbar from './component/Navbar';
+import Header from './component/Header';
 import { Routes, Route } from "react-router-dom";
 import Products from './component/Products';
 import Product from './component/Product'
 import Cart from './component/Cart';
 import About from './component/About';
 import Contact from './component/Contact';
+import Footer from './component/Footer';
 
 function App() {
   return (
     <>
-      <Navbar />
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
@@ -19,9 +20,8 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-
-
       </Routes>
+      <Footer/>
     </>
   );
 }
