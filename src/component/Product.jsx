@@ -63,7 +63,7 @@ function Product() {
           <p className="lead">{product.description}</p>
           <button
             className="btn btn-outline-dark px-4 py-2"
-            onClick={()=>addProduct(product)}
+            onClick={() => addProduct(product)}
           >
             Add to Cart
           </button>
