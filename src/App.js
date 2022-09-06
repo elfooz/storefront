@@ -8,11 +8,14 @@ import Cart from './component/Cart';
 import About from './component/About';
 import Contact from './component/Contact';
 import Footer from './component/Footer';
+import SimpleCart from "./component/SimpleCart";
 
 function App() {
   return (
     <>
       <Header />
+      <SimpleCart/>
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
@@ -21,7 +24,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </>
   );
 }
