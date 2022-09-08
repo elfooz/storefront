@@ -3,9 +3,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addCart, delCart } from "../redux/action";
 
+
 const Cart = () => {
   const state = useSelector((state) => state.handleCart);
   const dispatch = useDispatch();
+
 
   const handleAdd = (item) => {
     dispatch(addCart(item));
@@ -13,6 +15,7 @@ const Cart = () => {
   const handleDel = (item) => {
     dispatch(delCart(item));
   };
+
 
   const emptyCart = () => {
     return (
@@ -41,6 +44,7 @@ const Cart = () => {
               </div>
               <div className="col-md-4">
                 <h3>{product.title}</h3>
+                <p className="lead fw-bold">In Stock: {product.rating.count}</p>
                 <p className="lead fw-bold">
                   {product.qty} X ${product.price} = $
                   {product.qty * product.price}
@@ -67,7 +71,7 @@ const Cart = () => {
   const buttons = () => {
     return (
       <>
-        <div className="container">
+        <div className="container" >
           <div className="row">
             <Link
               to="/checkout"
@@ -82,7 +86,7 @@ const Cart = () => {
   };
 
   return (
-    <div>
+    <div >
       {state.length === 0 && emptyCart()}
       {state.length !== 0 && state.map(cartItems)}
       {state.length !== 0 && buttons()}

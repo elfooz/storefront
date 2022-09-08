@@ -14,8 +14,7 @@ function App() {
   return (
     <>
       <Header />
-      <SimpleCart/>
-
+      <SimpleCart />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />

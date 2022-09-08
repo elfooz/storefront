@@ -16,6 +16,7 @@ const cartItems = (product) => {
     <div
         className=" position-relative "
         style={{ minHeight: "120px" }}
+        key={product.id}
     >
 
         <ToastContainer   position="top-end" className="p-3 ">
@@ -23,7 +24,7 @@ const cartItems = (product) => {
             <img
             src={product.image}
             alt={product.title}
-            className="rounded me-2"
+            className='cartItemImg'
             width="50px"
             />
             <strong className="me-auto" >{product.category}</strong>
@@ -39,7 +40,7 @@ const cartItems = (product) => {
     </div>
     );
 };
-return <div>{state.length === 0 ? " " : state.map(cartItems)}</div>;
+return <div>{state.length === 0 ? "" : state.map(cartItems)}</div>;
 };
 
 export default SimpleCart;

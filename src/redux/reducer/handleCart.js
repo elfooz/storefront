@@ -1,5 +1,6 @@
 const cart = [];
 
+
 const handleCart = (state = cart, action) => {
     const product = action.payload;
     switch (action.type) {
@@ -21,7 +22,7 @@ const handleCart = (state = cart, action) => {
                     }
                 ]
             }
-            break;
+        // break;
 
         case "DELITEM":
             const exist1 = state.find((x) => x.id === product.id);
@@ -32,11 +33,15 @@ const handleCart = (state = cart, action) => {
                     x.id === product.id ? { ...x, qty: x.qty - 1 } : x
                 );
             }
-            break;
-
+        // break;
+        case 'CHANGE_CART_QTY':
+            return {
+                ...state, cart: state.cart.filter((c) =>
+                    c.id === product.id ? (c.qty = product.qty) : c.qty),
+            };
         default:
             return state;
-            break;
+        // break;
     }
 
 }
