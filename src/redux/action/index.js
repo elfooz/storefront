@@ -14,3 +14,9 @@ export const delCart = (product) => {
         payload: product
     }
 }
+export const changeCart=(product)=>{
+    return {
+        type: "CHANGE_CART_QTY",
+        payload: product
+    }
+}

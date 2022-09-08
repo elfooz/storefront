@@ -22,7 +22,7 @@ function Product() {
       setLoading(false);
     };
     getProduct();
-  }, []);
+  }, [id]);
 
   const Loading = () => {
     return (
@@ -59,8 +59,12 @@ function Product() {
             Rating {product.rating && product.rating.rate}
             <i className="fa  fa-star"></i>
           </p>
+          {/* <p >In Stock: {product.rating.count}</p> */}
           <h3 className="display-6 fw-bold my-4">$ {product.price}</h3>
           <p className="lead">{product.description}</p>
+
+          {/* <p >In Stock: {product.rating.count}</p> */}
+
           <button
             className="btn btn-outline-dark px-4 py-2"
             onClick={() => addProduct(product)}

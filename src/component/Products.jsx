@@ -9,6 +9,7 @@ function Products() {
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
   let comonentMounted = true;
+
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true);
@@ -37,10 +38,10 @@ function Products() {
         </div>
         <div className="col-md-3">
           <Skeleton height={350} />
-        </div>{" "}
+        </div>
         <div className="col-md-3">
           <Skeleton height={350} />
-        </div>{" "}
+        </div>
         <div className="col-md-3">
           <Skeleton height={350} />
         </div>
@@ -54,7 +55,7 @@ function Products() {
   const ShowProducts = () => {
     return (
       <>
-        <div className="buttons d-flex justify-content-center mb-5 pb-5">
+        <div className="buttons d-flex justify-content-center mb-5 pb-5"      key={data.id}>
           <button
             className="btn btn-outline-dark me-2"
             onClick={() => setFilter(data)}
@@ -89,7 +90,7 @@ function Products() {
         {filter.map((product) => {
           return (
             <>
-              <div className="col-md-3 mb-4">
+              <div className="col-md-3 mb-4"   key={product.id}>
                 <div className="card h-100 text-center p-4" key={product.id}>
                   <img
                     src={product.image}
@@ -136,7 +137,7 @@ function Products() {
           </div>
         </div>
         <div className="row justify-content-center">
-          {loading ? <Loading /> : <ShowProducts />}
+          {loading ? <Loading /> : <ShowProducts   />}
         </div>
       </div>
     </div>
