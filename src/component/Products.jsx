@@ -104,18 +104,20 @@ function Products() {
                       {product.title.substring(0, 12)}....
                     </h5>
                     <p className="card-text lead fw-bold">${product.price}</p>
+                    <div className="buttons">
                     <button
-                      className="btn btn-outline-dark px-5 btn-sm "
+                      className="btn btn-outline-dark nav-link"
                       onClick={() => addProduct(product)}
                     >
                       Add to Cart
                     </button>
                     <Link
                       to={`/products/${product.id}`}
-                      className="btn btn-outline-dark px-5 btn-sm"
+                      className="btn btn-outline-dark nav-link"
                     >
                       View Details
                     </Link>
+                    </div>
                   </div>
                 </div>
               </div>

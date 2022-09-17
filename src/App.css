@@ -2,6 +2,12 @@
 .navbar-nav a {
     font-size: 18px;
 }
-footer{
+
+footer {
     text-align: center;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
 }
