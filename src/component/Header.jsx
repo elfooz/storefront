@@ -9,7 +9,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg bg-light py-3">
         <div className="container-fluid">
           <Link className="navbar-brand fw-blod fs-4" to="/">
-            Anas Store
+            The Store
           </Link>
           <button
             className="navbar-toggler"
